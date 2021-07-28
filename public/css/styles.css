@@ -253,7 +253,7 @@ nav li a:hover {
 
 input[type=text],
 textarea {
-    font-size: 1vw;
+    font-size: 12px;
     width: 100%;
     padding: 1vw;
     margin: 1vw 0;
