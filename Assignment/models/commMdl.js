@@ -1,16 +1,16 @@
 // Require the mongoose module
 var mongoose = require('mongoose');
 
-var mongoDB = "mongodb+srv://mongo_user:Mongo@cluster0.fbonz.mongodb.net/contact?retryWrites=true&w=majority";
-mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
+// var mongoDB = "mongodb+srv://mongo_user:Mongo@cluster0.fbonz.mongodb.net/contact?retryWrites=true&w=majority";
+// mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
 // Get the connection
-var db = mongoose.connection;
+// var db = mongoose.connection;
 // Bind connection to error event (to get notification of connection errors)
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+// db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
-db.once('open', function() {
-    console.log("we're connected! to db")
-});
+// db.once('open', function() {
+//     console.log("we're connected! to db")
+// });
 
 
 const uniqueValidator = require("mongoose-unique-validator");
