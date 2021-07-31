@@ -13,14 +13,6 @@ router.get('/', function(req, res, next) {
 //     res.render('contact-create', { title: 'Thank You' });
 // });
 
-/* GET all posts listing. */
-router.get('/all', function(req, res, next) {
-    Contact.find((err, posts) => {
-        console.log(posts);
-        res.render('contact-list', { contactPosts: posts });
-    });
-});
-
 // To create a new post
 router.post('/', function(req, res, next) {
     const data = req.body;
@@ -53,14 +45,6 @@ router.post('/', function(req, res, next) {
             comment: data.comment
         });
 
-    });
-});
-
-// Shows a single post
-router.get('/:pemail', function(req, res, next) {
-    const pstemail = req.params.pemail;
-    Contact.find({ postemail: pstemail }, (err, post) => {
-        res.render('contact-list', { contactPosts: post });
     });
 });
 
