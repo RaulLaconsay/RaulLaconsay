@@ -15,13 +15,16 @@ block content
       h3 Sign up
       form(method='post' action='/register')
           label(for='fname') First Name 
-          input#fname(type='text' name='firstname' placeholder='Your name..')
+          input#fname(type='text' name='firstname' placeholder='Your name..' value=postdata && postdata.firstname)
           label(for='lname') Last Name 
-          input#lname(type='text' name='lastname' placeholder='Your last name..')
+          input#lname(type='text' name='lastname' placeholder='Your last name..' value=postdata && postdata.lastname)
           label(for='emailadd') Email 
-          input#emailadd(type='text' name='email' placeholder='Email address')
-          label(for='password') Password 
-          input#emailadd(type='text' name='password' placeholder='Password')
+          input#emailadd(type='text' name='email' placeholder='Email address' value=postdata && postdata.email)
+          label(for='password') Password
+          br 
+          input#emailadd(type='password' name='password' placeholder='Password' value=postdata && postdata.password)
+          br
+          br
           input.roundbtn(type='submit' value='Submit')
 
     // map

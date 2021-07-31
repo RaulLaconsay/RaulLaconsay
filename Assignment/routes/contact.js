@@ -45,8 +45,10 @@ router.post('/', function(req, res, next) {
                 errors: errorArray
             });
         }
-        res.render("contact-create", {
+        res.render("thankyou", {
             title: 'Thank You',
+            tytext: 'your comment/question.',
+            tytext2: 'and we will get back to you in 1 - 2 business days.',
             firstname: data.firstname,
             lastname: data.lastname,
             email: data.email,

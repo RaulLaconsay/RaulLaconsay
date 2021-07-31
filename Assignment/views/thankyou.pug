@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  .grid-container
+    //- .intro.p-lr
+    h2 Thank you for #{tytext}
+    br
+    p #{firstname} #{lastname}, we appreciate your interest #{tytext2}
+      br
+      //- a(href='/contact/' + email) Review
+
+    //- if contactPosts
+    //-   each cpost in contactPosts
+    //-     h4= 'Name: ' + cpost.postfname +' ' +cpost.postlname  + ' Email: ' + cpost.postemail
+    //-     p= ' Comment/Question: ' + cpost.postcomments
+      
+  figure
+    img(src='img/ty.jpg' alt='Thank You' style='padding:0px;width:350px;height:270px;')
+  br

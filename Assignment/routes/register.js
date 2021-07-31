@@ -22,6 +22,10 @@ router.post('/', function(req, res, next) {
     post.postemail = data.email;
     post.postpassword = data.password;
 
+    console.log("Logging Data to Console");
+    console.log(data);
+    console.log(data.firstname, data.lastname, data.email, data.password);
+
     post.save(err => {
         // if(err) throw err;
         if (err) {
@@ -29,11 +33,14 @@ router.post('/', function(req, res, next) {
             const errorKeys = Object.keys(err.errors);
             errorKeys.forEach(key => errorArray.push(err.errors[key].message));
             return res.render("register", {
+                postdata: req.body,
                 errors: errorArray
             });
         }
-        res.redirect("register", {
+        res.render("thankyou", {
             title: 'Register',
+            tytext: 'registering.',
+            tytext2: ', you are now a registered user in our website.',
             firstname: data.firstname,
             lastname: data.lastname,
             email: data.email,
