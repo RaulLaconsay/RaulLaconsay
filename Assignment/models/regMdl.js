@@ -2,7 +2,7 @@
 var mongoose = require('mongoose');
 // Set up a mongoose connection
 // var mongoDB = 'mongodb://localhost:27017/blog';
-var mongoDB = "mongodb+srv://mongo_user:Mongo@cluster0.fbonz.mongodb.net/register/customers?retryWrites=true&w=majority";
+var mongoDB = "mongodb+srv://mongo_user:Mongo@cluster0.fbonz.mongodb.net/register/customer?retryWrites=true&w=majority";
 mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
 // Get the connection
 var db = mongoose.connection;

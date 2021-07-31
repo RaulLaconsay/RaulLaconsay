@@ -5,26 +5,26 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
-var postRouter = require('./routes/post');
+// var postRouter = require('./routes/post');
 var contactRouter = require('./routes/contact');
 var aboutRouter = require('./routes/about');
 var registerRouter = require('./routes/register');
 
 // Require the mongoose module
-var mongoose = require('mongoose');
+// var mongoose = require('mongoose');
 var app = express();
 // Set up a mongoose connection
 // var mongoDB = 'mongodb://localhost:27017/blog';
-var mongoDB = "mongodb+srv://mongo_user:Mongo@cluster0.fbonz.mongodb.net/contact?retryWrites=true&w=majority";
-mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
+// var mongoDB = "mongodb+srv://mongo_user:Mongo@cluster0.fbonz.mongodb.net/contact?retryWrites=true&w=majority";
+// mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
 // Get the connection
-var db = mongoose.connection;
+// var db = mongoose.connection;
 // Bind connection to error event (to get notification of connection errors)
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+// db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
-db.once('open', function() {
-    console.log("we're connected! to db")
-});
+// db.once('open', function() {
+//     console.log("we're connected! to db")
+// });
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -37,7 +37,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/post', postRouter);
+// app.use('/post', postRouter);
 app.use('/contact', contactRouter);
 app.use('/about', aboutRouter);
 app.use('/register', registerRouter);

@@ -1,0 +1,18 @@
+extends layout.pug
+
+block content
+
+  .grid-container
+    .intro.p-lr
+      h3 Travel Expert Philippines
+      h4 Comments/Questions for
+      if contactPosts
+          each cpost in contactPosts
+            h4= 'Name: ' + cpost.postfname +' ' +cpost.postlname  + ' Email: ' + cpost.postemail
+            p= ' Comment/Question: ' + cpost.postcomments
+      p
+        a(href="javascript:history.back()") Back
+          
+    figure
+      img(src='img/ty.jpg' alt='Thank You' style='padding:0px;width:350px;height:270px;')
+    br
