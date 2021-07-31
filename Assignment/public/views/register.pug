@@ -1,0 +1,36 @@
+extends layout.pug
+
+block content
+  header
+  // banner
+  .banner
+    .herotext
+      h2 Travel Expert Philippines
+  // Intro
+  .contact-grid-container
+    .intro.p-lr
+      h2 Register
+    // Registration form
+    .contactform.p-lr
+      h3 Sign up
+      form(method='post' action='/register')
+          label(for='fname') First Name 
+          input#fname(type='text' name='firstname' placeholder='Your name..')
+          label(for='lname') Last Name 
+          input#lname(type='text' name='lastname' placeholder='Your last name..')
+          label(for='emailadd') Email 
+          input#emailadd(type='text' name='email' placeholder='Email address')
+          label(for='password') Password 
+          input#emailadd(type='text' name='password' placeholder='Password')
+          input.roundbtn(type='submit' value='Submit')
+
+    // map
+    .map
+      figure
+        img(src='img/reg.jpg' alt='Register' style='height:300px;widht:300px')
+        figcaption Register welcome
+
+  if errors
+    ul
+      each error in errors
+        li.alert.alert-danger.m3= error
